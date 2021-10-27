@@ -50,7 +50,7 @@ ymin = min(DB_mag)-20;
 ymax = max(DB_mag)+20;
 ylim([ymin ymax])
 xticks([10e-2 10e-1 10e0 10e1 10e2]);
-yticks([-100:20:100]);
+yticks([-1000:20:1000]);
 grid
 
 subplot(2,1,2)
@@ -63,5 +63,5 @@ ymin = min(FRF_phase_deg)-22.5;
 ymax = max(FRF_phase_deg)+22.5;
 ylim([ymin ymax])
 xticks([10e-2 10e-1 10e0 10e1 10e2]);
-yticks([-360:45:360]);
+yticks([-3600:45:3600]);
 grid
