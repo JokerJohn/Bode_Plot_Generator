@@ -17,8 +17,8 @@ for omega = 10e-2:stepsize:10e2
     s = omega*1i;
     
     % **** ADD YOUR TRANSFER FUNCTION HERE ****
-    numer_TF = 100*(s+1);
-    denom_TF = (s^2+110*s+1000);
+    numer_TF = 12250*(s+4);
+    denom_TF = (s^2)*((s^2)+28*s+4900);
     % **** ADD YOUR TRANSFER FUNCTION HERE ****
     
     % Calculations for plots
@@ -35,6 +35,12 @@ for omega = 10e-2:stepsize:10e2
 end
 
 FRF_phase_deg = (360/(2*pi)) * unwrap(FRF_phase_rad);
+
+if max(FRF_phase_deg) > 90
+    FRF_phase_deg = FRF_phase_deg - 180;
+elseif min(FRF_phase_deg) < -180
+    FRF_phase_deg = FRF_phase_deg + 180;
+end
 
 % Create magnitude and phase plots
 figure
